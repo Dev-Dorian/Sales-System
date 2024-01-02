@@ -1,0 +1,557 @@
+--------------------------------------------------------
+-- Archivo creado  - miércoles-abril-08-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ARTICULO
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."ARTICULO" 
+   (	"CODIGO" VARCHAR2(10 BYTE), 
+	"PRECIO" FLOAT(126), 
+	"DESCRIPCION" VARCHAR2(60 BYTE), 
+	"EXISTENCIA" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table CLIENTE
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."CLIENTE" 
+   (	"NOMBRE" VARCHAR2(40 BYTE), 
+	"DIRECCION" VARCHAR2(40 BYTE), 
+	"NIT" VARCHAR2(15 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table COMPRA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."COMPRA" 
+   (	"CODIGO" VARCHAR2(10 BYTE), 
+	"FECHA" DATE, 
+	"PROVEEDOR_NIT" VARCHAR2(15 BYTE), 
+	"MONTO" FLOAT(126), 
+	"PAGO" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table CUENTA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."CUENTA" 
+   (	"USUARIO" VARCHAR2(20 BYTE), 
+	"PASSWORDHASH" VARCHAR2(255 BYTE), 
+	"ACCOUNTTYPE" NUMBER(1,0) DEFAULT 0, 
+	"BAN" NUMBER(1,0) DEFAULT 0
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table DETALLE_COMPRA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."DETALLE_COMPRA" 
+   (	"COMPRA_CODIGO" VARCHAR2(10 BYTE), 
+	"ARTICULO_CODIGO" VARCHAR2(10 BYTE), 
+	"CANTIDAD" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."DETALLE_FACTURA" 
+   (	"FACTURA_CODIGO" VARCHAR2(10 BYTE), 
+	"ARTICULO_CODIGO" VARCHAR2(10 BYTE), 
+	"CANTIDAD" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table FACTURA
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."FACTURA" 
+   (	"CODIGO" VARCHAR2(10 BYTE), 
+	"FECHA" DATE, 
+	"CLIENTE_NIT" VARCHAR2(15 BYTE), 
+	"MONTO" FLOAT(126), 
+	"PAGO" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Table PROVEEDOR
+--------------------------------------------------------
+
+  CREATE TABLE "PROYECTO1"."PROVEEDOR" 
+   (	"NOMBRE" VARCHAR2(40 BYTE), 
+	"DIRECCION" VARCHAR2(40 BYTE), 
+	"NIT" VARCHAR2(15 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+REM INSERTING into PROYECTO1.ARTICULO
+SET DEFINE OFF;
+Insert into PROYECTO1.ARTICULO (CODIGO,PRECIO,DESCRIPCION,EXISTENCIA) values ('01','1500','ARROZ','1');
+Insert into PROYECTO1.ARTICULO (CODIGO,PRECIO,DESCRIPCION,EXISTENCIA) values ('02','3','FRIJOLES','5');
+Insert into PROYECTO1.ARTICULO (CODIGO,PRECIO,DESCRIPCION,EXISTENCIA) values ('03','500','MAIZ','5');
+Insert into PROYECTO1.ARTICULO (CODIGO,PRECIO,DESCRIPCION,EXISTENCIA) values ('04','850','HELADO','3');
+REM INSERTING into PROYECTO1.CLIENTE
+SET DEFINE OFF;
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('JOSE','HEREDIA','879');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('PRUEBA','PRUEBA','44444');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('DORIAN HIDALGO','CARTAGO','304810124');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('CARLOS','SAN JOSE','4455445545');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('CA','4334','5435');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('DSVS','DSV','56546');
+Insert into PROYECTO1.CLIENTE (NOMBRE,DIRECCION,NIT) values ('DSFSD','DSFSD','3534');
+REM INSERTING into PROYECTO1.COMPRA
+SET DEFINE OFF;
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1005',to_date('06/04/20','DD/MM/RR'),'123','4500','2');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1006',to_date('06/04/20','DD/MM/RR'),'1234','3000','0');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1008',to_date('07/04/20','DD/MM/RR'),'123657','1500','1');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1009',to_date('07/04/20','DD/MM/RR'),'123','1','500');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1007',to_date('06/04/20','DD/MM/RR'),'12345','1500','1');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1000',to_date('21/03/20','DD/MM/RR'),'33333','1500','0');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1001',to_date('21/03/20','DD/MM/RR'),'5664545','1500','0');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1002',to_date('21/03/20','DD/MM/RR'),'5554545','3','1');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1003',to_date('21/03/20','DD/MM/RR'),'1','12','0');
+Insert into PROYECTO1.COMPRA (CODIGO,FECHA,PROVEEDOR_NIT,MONTO,PAGO) values ('1004',to_date('21/03/20','DD/MM/RR'),'54','15','0');
+REM INSERTING into PROYECTO1.CUENTA
+SET DEFINE OFF;
+Insert into PROYECTO1.CUENTA (USUARIO,PASSWORDHASH,ACCOUNTTYPE,BAN) values ('david','$2a$08$FyP3smxtbeapc7fToIt2auTSTRoC8y7OaMBFbMWlptilAd/WrkJou','0','0');
+Insert into PROYECTO1.CUENTA (USUARIO,PASSWORDHASH,ACCOUNTTYPE,BAN) values ('dorian01','$2a$08$HDsTztl97GEKZ5oVOOgl5.acXqLOh6juyf43rxcIgvvcAKbAKrUhu','0','0');
+Insert into PROYECTO1.CUENTA (USUARIO,PASSWORDHASH,ACCOUNTTYPE,BAN) values ('carla','$2a$08$5GdCShtZNvQWEID0iarsCugC4pQ/l1UQCqdN.7Lz.Zo8BOX2dQSl2','0','0');
+Insert into PROYECTO1.CUENTA (USUARIO,PASSWORDHASH,ACCOUNTTYPE,BAN) values ('marco','$2a$08$dMeZJscXk5ePnTMWpDAM..vZqgprfQJr426vUVl6lt1uoWpPTl0j.','0','0');
+Insert into PROYECTO1.CUENTA (USUARIO,PASSWORDHASH,ACCOUNTTYPE,BAN) values ('steven','$2a$08$DBTjb.Yx0XAs8bBBDvLuYeaHhNilnYRQTQmUHSjF4Ih28e9qE7042','0','0');
+REM INSERTING into PROYECTO1.DETALLE_COMPRA
+SET DEFINE OFF;
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1005','01','3');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1006','01','2');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1008','01','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1009','03','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1007','01','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1000','01','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1001','01','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1002','02','1');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1003','02','4');
+Insert into PROYECTO1.DETALLE_COMPRA (COMPRA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1004','02','5');
+REM INSERTING into PROYECTO1.DETALLE_FACTURA
+SET DEFINE OFF;
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1005','01','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1006','01','7');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1007','03','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1008','03','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1009','03','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1010','01','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1000','01','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1000','02','2');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1001','02','10');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1002','01','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1003','01','1');
+Insert into PROYECTO1.DETALLE_FACTURA (FACTURA_CODIGO,ARTICULO_CODIGO,CANTIDAD) values ('1004','01','1');
+REM INSERTING into PROYECTO1.FACTURA
+SET DEFINE OFF;
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1005',to_date('04/04/20','DD/MM/RR'),'304810124','1','1500');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1006',to_date('06/04/20','DD/MM/RR'),'879','10500','0');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1007',to_date('06/04/20','DD/MM/RR'),'879','2','500');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1008',to_date('06/04/20','DD/MM/RR'),'879','1','500');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1009',to_date('07/04/20','DD/MM/RR'),'879','1','500');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1010',to_date('07/04/20','DD/MM/RR'),'44444','1500','2');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1000',to_date('21/03/20','DD/MM/RR'),'304810124','1506','0');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1001',to_date('21/03/20','DD/MM/RR'),'4455445545','30','0');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1002',to_date('21/03/20','DD/MM/RR'),'5435','1500','0');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1003',to_date('21/03/20','DD/MM/RR'),'56546','1500','2');
+Insert into PROYECTO1.FACTURA (CODIGO,FECHA,CLIENTE_NIT,MONTO,PAGO) values ('1004',to_date('21/03/20','DD/MM/RR'),'3534','1500','0');
+REM INSERTING into PROYECTO1.PROVEEDOR
+SET DEFINE OFF;
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('DAVID','SAN JOSE','123');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('DAVID','SAN JOSE','1234');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('MALO','MALO','123657');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('MICHAEL','LIMON','12345');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('FANNY','CARTAGO','33333');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('FANNY','CARTAGO','5664545');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('TIO PELON','SAN JOSE','5554545');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('TIO PELON','HEREDIA','1');
+Insert into PROYECTO1.PROVEEDOR (NOMBRE,DIRECCION,NIT) values ('FRIJOLES TIERNITICOS','ALAJUELA','54');
+--------------------------------------------------------
+--  DDL for Index ARTICULO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."ARTICULO_PK" ON "PROYECTO1"."ARTICULO" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Index CLIENTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."CLIENTE_PK" ON "PROYECTO1"."CLIENTE" ("NIT") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Index COMPRA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."COMPRA_PK" ON "PROYECTO1"."COMPRA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Index FACTURA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."FACTURA_PK" ON "PROYECTO1"."FACTURA" ("CODIGO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Index PROVEEDOR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."PROVEEDOR_PK" ON "PROYECTO1"."PROVEEDOR" ("NIT") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C0010413
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROYECTO1"."SYS_C0010413" ON "PROYECTO1"."CUENTA" ("USUARIO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1" ;
+--------------------------------------------------------
+--  Constraints for Table ARTICULO
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."ARTICULO" ADD CONSTRAINT "ARTICULO_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."ARTICULO" MODIFY ("CODIGO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CLIENTE
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."CLIENTE" ADD CONSTRAINT "CLIENTE_PK" PRIMARY KEY ("NIT")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."CLIENTE" MODIFY ("NIT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."COMPRA" ADD CONSTRAINT "COMPRA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."COMPRA" MODIFY ("PROVEEDOR_NIT" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO1"."COMPRA" MODIFY ("CODIGO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CUENTA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."CUENTA" ADD PRIMARY KEY ("USUARIO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."CUENTA" ADD CONSTRAINT "ACCOUNT_BAN_CHECK" CHECK (ban IN (0,1)) ENABLE;
+  ALTER TABLE "PROYECTO1"."CUENTA" ADD CONSTRAINT "ACCOUNT_TYPE_CHECK" CHECK (accounttype IN (0,1)) ENABLE;
+  ALTER TABLE "PROYECTO1"."CUENTA" MODIFY ("ACCOUNTTYPE" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO1"."CUENTA" MODIFY ("PASSWORDHASH" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DETALLE_COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."DETALLE_COMPRA" MODIFY ("ARTICULO_CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO1"."DETALLE_COMPRA" MODIFY ("COMPRA_CODIGO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."DETALLE_FACTURA" MODIFY ("ARTICULO_CODIGO" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO1"."DETALLE_FACTURA" MODIFY ("FACTURA_CODIGO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."FACTURA" ADD CONSTRAINT "FACTURA_PK" PRIMARY KEY ("CODIGO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."FACTURA" MODIFY ("CLIENTE_NIT" NOT NULL ENABLE);
+  ALTER TABLE "PROYECTO1"."FACTURA" MODIFY ("CODIGO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PROVEEDOR
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."PROVEEDOR" ADD CONSTRAINT "PROVEEDOR_PK" PRIMARY KEY ("NIT")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "PROYECTO1"  ENABLE;
+  ALTER TABLE "PROYECTO1"."PROVEEDOR" MODIFY ("NIT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."COMPRA" ADD CONSTRAINT "COMPRA_PROVEEDOR_FK" FOREIGN KEY ("PROVEEDOR_NIT")
+	  REFERENCES "PROYECTO1"."PROVEEDOR" ("NIT") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DETALLE_COMPRA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."DETALLE_COMPRA" ADD CONSTRAINT "FK_ASS_4" FOREIGN KEY ("COMPRA_CODIGO")
+	  REFERENCES "PROYECTO1"."COMPRA" ("CODIGO") ENABLE;
+  ALTER TABLE "PROYECTO1"."DETALLE_COMPRA" ADD CONSTRAINT "FK_ASS_5" FOREIGN KEY ("ARTICULO_CODIGO")
+	  REFERENCES "PROYECTO1"."ARTICULO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."DETALLE_FACTURA" ADD CONSTRAINT "FK_ASS_2" FOREIGN KEY ("FACTURA_CODIGO")
+	  REFERENCES "PROYECTO1"."FACTURA" ("CODIGO") ENABLE;
+  ALTER TABLE "PROYECTO1"."DETALLE_FACTURA" ADD CONSTRAINT "FK_ASS_3" FOREIGN KEY ("ARTICULO_CODIGO")
+	  REFERENCES "PROYECTO1"."ARTICULO" ("CODIGO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "PROYECTO1"."FACTURA" ADD CONSTRAINT "FACTURA_CLIENTE_FK" FOREIGN KEY ("CLIENTE_NIT")
+	  REFERENCES "PROYECTO1"."CLIENTE" ("NIT") ENABLE;
+--------------------------------------------------------
+--  DDL for Procedure ACTUALIZAREXISTENCIAARTICULO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."ACTUALIZAREXISTENCIAARTICULO" 
+(
+  cod articulo.codigo%type,
+  ex articulo.existencia%type
+)
+as
+begin
+update articulo set existencia = ex where codigo = cod;
+commit;
+end actualizarExistenciaArticulo;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure COMPRARCONPROVEEDOR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."COMPRARCONPROVEEDOR" 
+(
+  nit in proveedor.nit%type,
+  comCodigo in compra.codigo%type,
+  comfecha in compra.fecha%type,
+  pago in compra.pago%type,
+  monto in compra.monto%type
+)
+as
+begin
+insert into compra values(comCodigo,comfecha,nit,monto,pago);
+commit;
+end comprarConProveedor;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure COMPRARSINPROVEEDOR
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."COMPRARSINPROVEEDOR" 
+              (
+                nombre in proveedor.nombre%type,
+                direccion in proveedor.direccion%type,
+                nit in proveedor.nit%type,
+                comCodigo in compra.codigo%type,
+                comfecha in compra.fecha%type,
+                monto in compra.monto%type,    
+                pago in compra.pago%type
+              )
+              as
+              begin
+              insert into proveedor values(nombre,direccion,nit);
+              insert into compra values(comCodigo,comfecha,nit,monto,pago);
+              commit;
+              end comprarSinProveedor;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure DETALLECOMPRA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."DETALLECOMPRA" 
+(
+  comCodigo in compra.codigo%type,
+  artCodigo in articulo.codigo%type,
+  cantidad in detalle_compra.cantidad%type
+)
+as
+begin
+insert into detalle_compra values(comCodigo,artCodigo,cantidad);
+update articulo set existencia = articulo.existencia+cantidad where codigo = artCodigo;
+commit;
+end detalleCompra;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure DETALLEFACTURA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."DETALLEFACTURA" 
+(
+  facCodigo in factura.codigo%type,
+  artCodigo in articulo.codigo%type,
+  cantidad in detalle_factura.cantidad%type
+)
+as
+begin
+insert into detalle_factura values(facCodigo,artCodigo,cantidad);
+update articulo set existencia = articulo.existencia-cantidad where codigo = artCodigo;
+commit;
+end detalleFactura;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ELIMINARARTICULO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."ELIMINARARTICULO" (cod articulo.codigo%type)
+as
+begin
+delete from articulo where codigo=cod;
+commit;
+end eliminarArticulo;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure FACTURARCONCLIENTE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."FACTURARCONCLIENTE" 
+(
+  nit in cliente.nit%type,
+  facCodigo in factura.codigo%type,
+  facfecha in factura.fecha%type,
+  pago in factura.pago%type,
+  monto in factura.monto%type
+)
+as
+begin
+insert into factura values(facCodigo,facfecha,nit,monto,pago);
+commit;
+end facturarConCLiente;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure FACTURARSINCLIENTE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."FACTURARSINCLIENTE" 
+              (
+                nombre in cliente.nombre%type,
+                direccion in cliente.direccion%type,
+                nit in cliente.nit%type,
+                facCodigo in factura.codigo%type,
+                facfecha in factura.fecha%type,
+                monto in factura.monto%type,    
+                pago in factura.pago%type
+              )
+              as
+              begin
+              insert into cliente values(nombre,direccion,nit);
+              insert into factura values(facCodigo,facfecha,nit,monto,pago);
+              commit;
+              end facturarSinCLiente;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure NUEVOARTICULO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PROYECTO1"."NUEVOARTICULO" 
+(
+  codigo articulo.codigo%type,
+  precio articulo.precio%type,
+  descripcion articulo.descripcion%type,
+  existencia articulo.existencia%type
+)
+as
+begin
+insert into articulo values(codigo,precio,descripcion,existencia);
+commit;
+end nuevoArticulo;
+
+/

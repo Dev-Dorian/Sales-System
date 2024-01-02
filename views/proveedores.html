@@ -1,0 +1,45 @@
+<div class="ui container segment">
+    <div class="ui grid">
+        <div class="four wide column">
+
+                <div class="ui secondary vertical menu">
+                <a href="#/compras" class="item">Compras</a>
+                
+                <a href="#/compras/listarProveedores" class="active item">Listar Proveedores</a>
+                <a href="#/compras/listarCompras" class="item">Listar Compras</a>
+            </div>
+
+        </div>
+        <div class="twelve wide column">
+            <div class="ui fluid container">
+            <h1 class="ui block header center aligned">Listar Proveedores</h1>
+                <div class="ui segment">
+                    <table class="ui blue celled table">
+                            <thead>
+                                <tr>
+                                    <th>Nit</th>
+                                    <th>Proveedor</th>
+                                    <th>Dirección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-show="proveedores.length <= 0">
+                                    <td colspan="4" class="ui center aligned">Ningun Proveedor</td>
+                                </tr>
+                                <tr ng-repeat="proveedor in proveedores">
+                                    <td>{{proveedor.NIT}}</td>
+                                    <td >{{proveedor.NOMBRE}}</td>
+                                    <td>{{proveedor.DIRECCION}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>

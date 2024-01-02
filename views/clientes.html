@@ -1,0 +1,46 @@
+<div class="ui container segment">
+    <div class="ui grid">
+        <div class="four wide column">
+
+               <div class="ui secondary vertical menu">
+                <a href="#/facturacion" class="item">Facturar</a>
+                
+                <a href="#/facturacion/listarClientes" class="active item">Listar Clientes</a>
+                <a href="#/facturacion/listarFacturas" class="item">Listar Facturas</a> 
+                </div>
+
+        </div>
+        <div class="twelve wide column">
+            <div class="ui fluid container">
+            <h1 class="ui block header center aligned">Listar Clientes</h1>
+                <div class="ui segment">
+                    <table class="ui blue celled table">
+                            <thead>
+                                <tr>
+                                    <th>Nit</th>
+                                    <th>Cliente</th>
+                                    <th>Dirección</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-show="clientes.length <= 0">
+                                    <td colspan="4" class="ui center aligned">Ningun Cliente</td>
+                                </tr>
+                                <tr ng-repeat="cliente in clientes">
+                                    <td >{{cliente.NIT}}</td>
+                                    <td >{{cliente.NOMBRE}}</td>
+                                    <td>{{cliente.DIRECCION}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>

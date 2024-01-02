@@ -1,0 +1,49 @@
+<div class="ui container segment">
+    <div class="ui grid">
+        <div class="four wide column">
+
+                <div class="ui secondary vertical menu">
+                <a href="#/compras" class="item">Compras</a>
+                
+                <a href="#/compras/listarProveedores" class="item">Listar Proveedores</a>
+                <a href="#/compras/listarCompras" class="active item">Listar Compras</a>
+            </div>
+
+        </div>
+        <div class="twelve wide column">
+            <div class="ui fluid container">
+            <h1 class="ui block header center aligned">Listar Compras</h1>
+                <div class="ui segment">
+                    <table class="ui blue celled table">
+                            <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Proveedor</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-show="compras.length <= 0">
+                                    <td colspan="4" class="ui center aligned">Ningun Compra</td>
+                                </tr>
+                                <tr ng-repeat="compra in compras">
+                                    <td>
+                                        <a href="#/compras/compra/{{compra.CODIGO}}" class=" ui mini button">DETALLAR</a>
+                                        <span class="ui red header"> {{compra.CODIGO}}</span>
+                                    </td>
+                                    <td >{{compra.NOMBRE}}</td>
+                                    <td>{{compra.FECHA}}</td>
+                                    <td class="ui green header">{{"¢ "+compra.MONTO}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
